@@ -1,0 +1,42 @@
+# =====================
+# Environment Variables
+# =====================
+.env
+.env.*
+!.env.example
+
+# =====================
+# Node / Frontend
+# =====================
+node_modules/
+/build
+/frontend/build
+yarn-error.log*
+yarn-debug.log*
+npm-debug.log*
+.pnpm-debug.log*
+.cache/
+.yarn/install-state.gz
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# =====================
+# Python / Backend
+# =====================
+__pycache__/
+*.py[cod]
+*.pyo
+venv/
+.venv/
+
+# =====================
+# System & IDE
+# =====================
+.DS_Store
+*.pem
+.vscode/
+.idea/
+Thumbs.db
