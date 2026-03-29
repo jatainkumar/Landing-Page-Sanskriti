@@ -75,3 +75,8 @@ To get the application up and running on your local machine, you need to set up 
 - **Waitlist Registration**: Capture user name, email, country, and interests.
 - **Service Integration**: Seamlessly sends capture form data to Zapier for automated workflows.
 - **Database Tracking**: All signups are persisted to MongoDB.
+
+## Deployment
+
+A complete step-by-step guide for deploying this project to production is available. 
+You can view it here: [Deploying to Render (RENDER_DEPLOYMENT.md)](./RENDER_DEPLOYMENT.md)
