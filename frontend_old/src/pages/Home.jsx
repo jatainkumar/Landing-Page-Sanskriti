@@ -47,8 +47,8 @@ const Home = () => {
     setFormData((prev) => ({
       ...prev,
       interests: prev.interests.includes(interest) ?
-      prev.interests.filter((i) => i !== interest) :
-      [...prev.interests, interest]
+        prev.interests.filter((i) => i !== interest) :
+        [...prev.interests, interest]
     }));
   };
 
@@ -81,26 +81,26 @@ const Home = () => {
   };
 
   const faqItems = [
-  {
-    question: "When is Sanskriti launching?",
-    answer: "We're preparing to open Sanskriti soon. Join the waitlist and you'll be the first to receive launch updates."
-  },
-  {
-    question: "What kind of content will be available?",
-    answer: "Sanskriti will offer devotional music, cultural storytelling, festival experiences, family learning, and curated heritage programming."
-  },
-  {
-    question: "Is Sanskriti only for children?",
-    answer: "No. Sanskriti is built for the whole family — children, parents, and anyone seeking a deeper connection to Indian culture."
-  },
-  {
-    question: "Will there be founding member benefits?",
-    answer: "Yes. Early members will receive first updates on launch access, selected benefits, and special communication as Sanskriti opens."
-  },
-  {
-    question: "Can I join from outside India?",
-    answer: "Yes. Sanskriti is being created for Indian families across the world."
-  }];
+    {
+      question: "When is Sanskriti launching?",
+      answer: "We're preparing to open Sanskriti soon. Join the waitlist and you'll be the first to receive launch updates."
+    },
+    {
+      question: "What kind of content will be available?",
+      answer: "Sanskriti will offer devotional music, cultural storytelling, festival experiences, family learning, and curated heritage programming."
+    },
+    {
+      question: "Is Sanskriti only for children?",
+      answer: "No. Sanskriti is built for the whole family — children, parents, and anyone seeking a deeper connection to Indian culture."
+    },
+    {
+      question: "Will there be founding member benefits?",
+      answer: "Yes. Early members will receive first updates on launch access, selected benefits, and special communication as Sanskriti opens."
+    },
+    {
+      question: "Can I join from outside India?",
+      answer: "Yes. Sanskriti is being created for Indian families across the world."
+    }];
 
 
   return (
@@ -167,7 +167,7 @@ const Home = () => {
               Reconnect with Indian <em className="culture-italic">culture</em>, wherever you are.
             </h1>
             <p className="hero-subheadline">
-              Sanskriti brings together devotional music, cultural storytelling, festivals, and family learning 
+              Sanskriti brings together devotional music, cultural storytelling, festivals, and family learning
               in one premium platform for global Indian families.
             </p>
             <div className="hero-cta-group">
@@ -206,35 +206,35 @@ const Home = () => {
         <div className="section-label reveal">JOIN THE WAITLIST</div>
         <div className="waitlist-card reveal">
           {!formSubmitted ?
-          <>
+            <>
               <h2 className="card-headline">Reserve your founding family spot.</h2>
               <p className="card-subline">No spam. Just meaningful updates as we build.</p>
-              
+
               <form onSubmit={handleSubmit} className="waitlist-form">
                 <div className="form-row">
                   <input
-                  type="text"
-                  placeholder="First Name"
-                  value={formData.firstName}
-                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                  required
-                  className="form-input" />
+                    type="text"
+                    placeholder="First Name"
+                    value={formData.firstName}
+                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                    required
+                    className="form-input" />
 
                   <input
-                  type="email"
-                  placeholder="Email Address"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="form-input" />
+                    type="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    required
+                    className="form-input" />
 
                 </div>
 
                 <select
-                value={formData.country}
-                onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                required
-                className="form-input">
+                  value={formData.country}
+                  onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                  required
+                  className="form-input">
 
                   <option value="">Select Country</option>
                   <option value="India">India</option>
@@ -251,15 +251,15 @@ const Home = () => {
                   <label className="interest-label">I'm most interested in:</label>
                   <div className="interest-pills">
                     {['Family & Kids', 'Devotional Music', 'Festivals & Traditions', 'Cultural Stories'].map((interest) =>
-                  <button
-                    key={interest}
-                    type="button"
-                    className={`interest-pill ${formData.interests.includes(interest) ? 'selected' : ''}`}
-                    onClick={() => handleInterestToggle(interest)}>
+                      <button
+                        key={interest}
+                        type="button"
+                        className={`interest-pill ${formData.interests.includes(interest) ? 'selected' : ''}`}
+                        onClick={() => handleInterestToggle(interest)}>
 
                         {interest}
                       </button>
-                  )}
+                    )}
                   </div>
                 </div>
 
@@ -272,7 +272,7 @@ const Home = () => {
               </form>
             </> :
 
-          <div className="success-state">
+            <div className="success-state">
               <div className="success-icon">✦</div>
               <h2 className="success-headline">You're on the list. Welcome to Sanskriti.</h2>
               <p className="success-message">We'll be in touch with launch updates and founding member news.</p>
@@ -287,9 +287,9 @@ const Home = () => {
         <h2 className="section-h2 reveal">Culture shouldn't have to travel in fragments.</h2>
         <div className="divider reveal"></div>
         <p className="why-body reveal">
-          For families living away from India, culture often becomes fragmented. Stories are scattered, music is 
-          disconnected, and traditions are reduced to occasional moments. Sanskriti was created to bring it all 
-          together in one place, so families can stay rooted, children can grow up with cultural confidence, and 
+          For families living away from India, culture often becomes fragmented. Stories are scattered, music is
+          disconnected, and traditions are reduced to occasional moments. Sanskriti was created to bring it all
+          together in one place, so families can stay rooted, children can grow up with cultural confidence, and
           tradition can remain a living part of everyday life.
         </p>
         <div className="image-banner reveal">
@@ -415,8 +415,8 @@ const Home = () => {
             <h2 className="section-h2">For families who refuse to let culture fade.</h2>
             <div className="divider"></div>
             <p className="who-body">
-              Sanskriti is for families who want their children to grow up connected to Indian values, stories, 
-              music, and traditions. It is for those who miss the emotional depth of festivals, the power of 
+              Sanskriti is for families who want their children to grow up connected to Indian values, stories,
+              music, and traditions. It is for those who miss the emotional depth of festivals, the power of
               devotional music, and the richness of culture that deserves more than random clips and fragmented content.
             </p>
           </div>
@@ -449,7 +449,7 @@ const Home = () => {
         </div>
         <h2 className="founding-h2 reveal">Become a Founding Family</h2>
         <p className="founding-body reveal">
-          Our earliest members will help shape Sanskriti from the beginning. By joining the waitlist, you'll be 
+          Our earliest members will help shape Sanskriti from the beginning. By joining the waitlist, you'll be
           the first to hear about launch access, founding member invitations, and the journey ahead.
         </p>
         <button onClick={() => scrollToSection('waitlist')} className="btn-founding reveal">
@@ -470,7 +470,7 @@ const Home = () => {
       <section id="why-join" className="benefits-section">
         <div className="section-label reveal">WHY JOIN THE WAITLIST</div>
         <h2 className="section-h2 reveal">Early. Intentional. Yours.</h2>
-        
+
         <div className="benefits-grid">
           <div className="benefit-card reveal">
             <div className="benefit-number">01</div>
@@ -508,10 +508,10 @@ const Home = () => {
 
         <div className="faq-list">
           {faqItems.map((item, index) =>
-          <div key={index} className="faq-item reveal">
+            <div key={index} className="faq-item reveal">
               <button
-              className="faq-question"
-              onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}>
+                className="faq-question"
+                onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}>
 
                 <span>{item.question}</span>
                 {expandedFaq === index ? <Minus size={24} /> : <Plus size={24} />}

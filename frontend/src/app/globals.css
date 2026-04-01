@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-peacock: #081220;
+  --color-gold: #D4AF37;
+  --color-gold-light: #E5C158;
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  /* Ensure entire background is Midnight Peacock Blue */
+  --background: #081220;
+  /* Muted white for body text */
+  --foreground: rgba(255, 255, 255, 0.7); 
+}
+
+html {
+  /* Scale down the entire layout by reducing the root font size from the default 16px to 14px (87.5%) */
+  font-size: 14px;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), serif;
+  color: rgba(255, 255, 255, 0.9);
+}
