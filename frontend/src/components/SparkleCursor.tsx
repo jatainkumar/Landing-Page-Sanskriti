@@ -68,6 +68,8 @@ export default function SparkleCursor() {
 
     // Track mouse position
     let mouse = { x: -100, y: -100 };
+    
+    // Mouse Event
     const handleMouseMove = (e: MouseEvent) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
@@ -76,7 +78,32 @@ export default function SparkleCursor() {
         particles.current.push(new Particle(mouse.x, mouse.y));
       }
     };
+
+    // Touch Events for Mobile Interaction
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+        for (let i = 0; i < 2; i++) {
+          particles.current.push(new Particle(mouse.x, mouse.y));
+        }
+      }
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+        // Spawn slightly more on initial tap
+        for (let i = 0; i < 4; i++) {
+          particles.current.push(new Particle(mouse.x, mouse.y));
+        }
+      }
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
 
     // Animation Loop
     let animationFrameId: number;
@@ -100,6 +127,8 @@ export default function SparkleCursor() {
     return () => {
       window.removeEventListener("resize", resizeCanvas);
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchstart", handleTouchStart);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);

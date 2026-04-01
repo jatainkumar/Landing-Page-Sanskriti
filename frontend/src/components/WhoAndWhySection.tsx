@@ -41,7 +41,7 @@ export default function WhoAndWhySection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="flex flex-col bg-white/[0.02] border border-white/10 rounded-3xl p-10 md:p-14"
+          className="flex flex-col bg-peacock/80 backdrop-blur-md border border-white/10 rounded-3xl p-10 md:p-14"
         >
           <div className="text-gold-light tracking-[0.2em] text-sm uppercase font-semibold mb-8">
             Why Join The Waitlist

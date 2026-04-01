@@ -97,7 +97,7 @@ export default function FaqSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8 }}
-        className="w-full max-w-xl mx-auto flex flex-col items-center bg-white/[0.03] p-10 md:p-14 rounded-3xl border border-white/10 scroll-mt-24"
+        className="w-full max-w-xl mx-auto flex flex-col items-center bg-peacock/80 backdrop-blur-md p-10 md:p-14 rounded-3xl border border-white/10 scroll-mt-24"
       >
         <h2 className="text-3xl md:text-4xl font-serif text-white mb-4 text-center">
           Join the waitlist. Stay rooted.

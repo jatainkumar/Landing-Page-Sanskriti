@@ -14,8 +14,8 @@ class AmbientParticle {
   constructor(canvasWidth: number, canvasHeight: number) {
     this.x = Math.random() * canvasWidth;
     this.y = Math.random() * canvasHeight;
-    // Increased particle size for better visibility
-    this.size = Math.random() * 2.5 + 0.8; 
+    // Decreased particle size to half of what it was
+    this.size = Math.random() * 1.25 + 0.4; 
     // Very slow upward drift
     this.speedY = Math.random() * 0.4 + 0.2; 
     // Extremely subtle left/right sway
@@ -79,9 +79,10 @@ export default function BackgroundSparkles() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       
-      // Drastically Increased number of particles to spread across the entire website
-      const particleCount = 250; 
+      // Decreased to 3/4 of 250 (187 particles)
+      const particleCount = 187; 
       particles.current = [];
+
       
       for (let i = 0; i < particleCount; i++) {
         particles.current.push(new AmbientParticle(canvas.width, canvas.height));

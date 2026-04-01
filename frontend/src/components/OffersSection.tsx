@@ -77,7 +77,7 @@ export default function OffersSection() {
             <motion.div
               key={pillar.id}
               variants={itemVariants}
-              className="group relative p-10 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-500 overflow-hidden flex flex-col items-start"
+              className="group relative p-10 rounded-2xl border border-white/10 bg-peacock/80 backdrop-blur-md hover:bg-peacock/90 transition-colors duration-500 overflow-hidden flex flex-col items-start"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
               
