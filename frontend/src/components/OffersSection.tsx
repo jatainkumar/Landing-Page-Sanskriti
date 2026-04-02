@@ -10,24 +10,28 @@ const pillars = [
     title: "Devotional Music",
     description: "Bhajans, sacred music, concerts, and original Sanskriti productions.",
     icon: Music,
+    videoId: "iGCPoaS91bI",
   },
   {
     id: 2,
     title: "Cultural Stories",
     description: "Timeless stories, traditions, and heritage explained with depth and beauty.",
     icon: BookOpen,
+    videoId: "KzuQpnbvS3g",
   },
   {
     id: 3,
     title: "Festivals & Rituals",
     description: "Celebrate Indian festivals with meaning, not just memory.",
     icon: Lamp,
+    videoId: "KzuQpnbvS3g",
   },
   {
     id: 4,
     title: "Family Learning",
     description: "Cultural journeys, stories, and spiritual learning designed for children and families.",
     icon: Users,
+    videoId: "xigYQkfh0BQ",
   },
 ];
 
@@ -89,9 +93,21 @@ export default function OffersSection() {
                 {pillar.title}
               </h3>
               
-              <p className="text-white/70 font-light text-lg leading-relaxed">
+              <p className="text-white/70 font-light text-lg leading-relaxed mb-6">
                 {pillar.description}
               </p>
+
+              <div className="w-full aspect-video rounded-xl overflow-hidden border border-white/10 bg-black/50 relative mt-auto shadow-inner">
+                <iframe
+                  className="w-full h-full absolute inset-0"
+                  src={`https://www.youtube.com/embed/${pillar.videoId}`}
+                  title={`${pillar.title} Video`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen>
+                </iframe>
+              </div>
             </motion.div>
           ))}
         </motion.div>

@@ -46,6 +46,8 @@ class WaitlistSubmission(BaseModel):
     email: EmailStr
     country: str
     interests: List[str]
+    source: str = ""
+    experienceDesire: str = ""
 
 class WaitlistResponse(BaseModel):
     model_config = ConfigDict(extra="ignore")
@@ -55,6 +57,8 @@ class WaitlistResponse(BaseModel):
     email: str
     country: str
     interests: List[str]
+    source: str = ""
+    experienceDesire: str = ""
     timestamp: datetime
 
 # Add your routes to the router instead of directly to app
@@ -97,6 +101,8 @@ async def submit_waitlist(submission: WaitlistSubmission):
             "email": submission.email,
             "country": submission.country,
             "interests": submission.interests,
+            "source": submission.source,
+            "experienceDesire": submission.experienceDesire,
             "timestamp": datetime.now(timezone.utc).isoformat()
         }
         
@@ -110,6 +116,8 @@ async def submit_waitlist(submission: WaitlistSubmission):
             "email": submission.email,
             "country": submission.country,
             "interests": ", ".join(submission.interests),
+            "source": submission.source,
+            "experienceDesire": submission.experienceDesire,
             "timestamp": waitlist_data["timestamp"]
         }
         

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Why Sanskriti", href: "#why" },
@@ -56,10 +57,16 @@ export default function Navbar() {
           <a
             href="#"
             onClick={(e) => scrollToSection(e, "body")}
-            className="text-2xl font-serif text-white flex items-center gap-2 group cursor-pointer"
+            className="flex items-center group cursor-pointer"
           >
-            <span className="w-3 h-3 rounded-full bg-gold transition-transform group-hover:scale-125"></span>
-            Sanskriti
+            <Image
+              src="/Sanskriti_White_Horizontal.png"
+              alt="Sanskriti Logo"
+              width={1081}
+              height={411}
+              className="object-contain w-36 md:w-48 h-auto"
+              priority
+            />
           </a>
 
           {/* Desktop Nav */}

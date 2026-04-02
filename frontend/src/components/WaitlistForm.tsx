@@ -14,21 +14,29 @@ const COUNTRIES = [
   "India", "United States", "United Kingdom", "Canada", "Australia", "UAE", "Singapore", "Other"
 ];
 
+const EXPERIENCE_OPTIONS = [
+  "Yes, definitely",
+  "Maybe",
+  "Not relevant"
+];
+
 export default function WaitlistForm() {
   const [formData, setFormData] = useState({
     firstName: "",
     email: "",
     country: "",
+    source: "",
+    experienceDesire: "",
     interests: [] as string[]
   });
-  
+
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleInterestToggle = (interest: string) => {
     setFormData(prev => ({
       ...prev,
-      interests: prev.interests.includes(interest) 
+      interests: prev.interests.includes(interest)
         ? prev.interests.filter(i => i !== interest)
         : [...prev.interests, interest]
     }));
@@ -46,7 +54,7 @@ export default function WaitlistForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
-      
+
       if (response.ok) {
         setStatus("success");
       } else {
@@ -87,7 +95,7 @@ export default function WaitlistForm() {
             placeholder="Aarav"
           />
         </div>
-        
+
         <div className="flex flex-col">
           <label className="text-xs text-white/50 mb-1 uppercase tracking-wider">Email</label>
           <input
@@ -118,7 +126,33 @@ export default function WaitlistForm() {
       </div>
 
       <div className="flex flex-col">
-        <label className="text-xs text-white/50 mb-3 uppercase tracking-wider">I'm most interested in:</label>
+        <label className="text-xs text-white/50 mb-1 uppercase tracking-wider">How did you hear about us?</label>
+        <input
+          type="text"
+          value={formData.source}
+          onChange={(e) => setFormData(prev => ({ ...prev, source: e.target.value }))}
+          className="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold-light focus:bg-white/10 transition-colors"
+          placeholder="e.g. Instagram, Word of Mouth"
+        />
+      </div>
+
+      <div className="flex flex-col relative w-full">
+        <label className="text-xs text-white/50 mb-1 uppercase tracking-wider">Would you like your kids to experience Indian culture through Sanskriti?</label>
+        <select
+          value={formData.experienceDesire}
+          onChange={(e) => setFormData(prev => ({ ...prev, experienceDesire: e.target.value }))}
+          className="w-full appearance-none bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-light focus:bg-white/10 transition-colors cursor-pointer"
+        >
+          <option value="" disabled className="bg-peacock text-white/50">Select an option</option>
+          {EXPERIENCE_OPTIONS.map(opt => (
+            <option key={opt} value={opt} className="bg-peacock text-white">{opt}</option>
+          ))}
+        </select>
+        <ChevronDown className="absolute right-4 bottom-3 w-5 h-5 text-white/50 pointer-events-none" />
+      </div>
+
+      <div className="flex flex-col">
+        <label className="text-xs text-white/50 mb-3 uppercase tracking-wider">What would you love to explore on Sanskriti?</label>
         <div className="flex flex-wrap gap-2">
           {INTERESTS.map(interest => {
             const isSelected = formData.interests.includes(interest);
@@ -127,11 +161,10 @@ export default function WaitlistForm() {
                 key={interest}
                 type="button"
                 onClick={() => handleInterestToggle(interest)}
-                className={`px-4 py-2 rounded-full text-sm border transition-all ${
-                  isSelected 
+                className={`px-4 py-2 rounded-full text-sm border transition-all ${isSelected
                     ? "bg-gold-light border-gold-light text-peacock font-medium"
                     : "bg-transparent border-white/20 text-white/70 hover:border-white/40"
-                }`}
+                  }`}
               >
                 {interest}
               </button>
@@ -148,7 +181,7 @@ export default function WaitlistForm() {
         {status === "loading" ? (
           <Loader2 className="w-6 h-6 animate-spin" />
         ) : (
-          "Join the Founding Families Waitlist"
+          "Join the Waitlist"
         )}
       </button>
 

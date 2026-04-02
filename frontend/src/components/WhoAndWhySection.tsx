@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const benefits = [
   { num: "01", title: "Early Access", text: "Be first to know when Sanskriti opens." },
@@ -30,9 +31,18 @@ export default function WhoAndWhySection() {
             For families who refuse to let culture fade.
           </h2>
           <div className="w-12 h-0.5 bg-gold mb-10"></div>
-          <p className="text-xl text-white/70 font-light leading-relaxed">
+          <p className="text-xl text-white/70 font-light leading-relaxed mb-10">
             Sanskriti is for families who want their children to grow up connected to Indian values, stories, music, and traditions. It is for those who miss the emotional depth of festivals, the power of devotional music, and the richness of culture that deserves more than random clips and fragmented content.
           </p>
+          <div className="w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(212,175,55,0.05)] relative">
+            <Image
+              src="/photo1.jpg"
+              alt="Sanskriti Family & Culture"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
         </motion.div>
 
         {/* WHY JOIN block */}

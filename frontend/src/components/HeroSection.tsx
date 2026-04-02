@@ -76,11 +76,10 @@ export default function HeroSection() {
             className="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden border border-white/20 shadow-[0_0_40px_rgba(212,175,55,0.15)] bg-black/50 p-2 backdrop-blur-sm"
           >
             <div className="w-full h-full rounded-xl overflow-hidden bg-black flex items-center justify-center relative border border-white/5">
-              {/* Added lazy loading and absolute positioning for responsive iframe */}
               <iframe
                 className="w-full h-full absolute inset-0"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=_g4qKHg8im_kG89T"
-                title="YouTube video player"
+                src="https://www.youtube.com/embed/d1SOW1iVwKU"
+                title="Sanskriti Story"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
